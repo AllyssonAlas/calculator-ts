@@ -62,7 +62,7 @@
     "prettier-standard": "^16.4.1"
   },
   "lint-staged": {
-    "*.tsx": "eslint --cache --fix"
+    "*.ts?(x)": "eslint --cache --fix"
   },
   "config": {
     "commitizen": {
