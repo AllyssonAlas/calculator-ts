@@ -28,5 +28,6 @@ module.exports = {
       'error',
       { anonymous: 'never', named: 'never', asyncArrow: 'always' },
     ],
+    'no-undef': 'off',
   },
 }
