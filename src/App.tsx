@@ -1,5 +1,14 @@
 import React from 'react'
 
+import { GlobalStyles } from './styles/global'
+
+import { Home } from './pages/Home'
+
 export function App() {
-  return <div className={'App'}> Calculator</div>
+  return (
+    <>
+      <Home />
+      <GlobalStyles />
+    </>
+  )
 }
