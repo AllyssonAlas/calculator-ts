@@ -65,5 +65,10 @@ export const CalculatorKeyboard = styled.div`
     p {
       font-size: 1.8rem;
     }
+
+    svg {
+      height: 2rem;
+      width: 2rem;
+    }
   }
 `
