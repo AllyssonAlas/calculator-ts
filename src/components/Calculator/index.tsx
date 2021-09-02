@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { FaBackspace } from 'react-icons/fa'
 
-import { Container, CalculatorScreen, CalculatorKeyboard } from './styles'
+import { Container, CalculatorScreen, CalculatorKeyboard, Button } from './styles'
 
 export function Calculator(): JSX.Element {
   const [calculatorDigits, setCalculatorDigits] = useState('')
@@ -118,66 +118,66 @@ export function Calculator(): JSX.Element {
         </div>
       </CalculatorScreen>
       <CalculatorKeyboard>
-        <button onClick={handleClearCalculator} type={'button'}>
+        <Button fontSecondary onClick={handleClearCalculator} type={'button'}>
           <p>AC</p>
-        </button>
-        <button onClick={() => handleSetOperatorType('^')} type={'button'}>
+        </Button>
+        <Button fontSecondary onClick={() => handleSetOperatorType('^')} type={'button'}>
           <p>^</p>
-        </button>
-        <button onClick={() => handleSetOperatorType('%')} type={'button'}>
+        </Button>
+        <Button fontSecondary onClick={() => handleSetOperatorType('%')} type={'button'}>
           <p>%</p>
-        </button>
-        <button onClick={handleDeleteDigits} type={'button'}>
+        </Button>
+        <Button fontDanger onClick={handleDeleteDigits} type={'button'}>
           <FaBackspace />
-        </button>
-        <button onClick={() => handleCalculatorDigits('1')} type={'button'}>
+        </Button>
+        <Button onClick={() => handleCalculatorDigits('1')} type={'button'}>
           <p>1</p>
-        </button>
-        <button onClick={() => handleCalculatorDigits('2')} type={'button'}>
+        </Button>
+        <Button onClick={() => handleCalculatorDigits('2')} type={'button'}>
           <p>2</p>
-        </button>
-        <button onClick={() => handleCalculatorDigits('3')} type={'button'}>
+        </Button>
+        <Button onClick={() => handleCalculatorDigits('3')} type={'button'}>
           <p>3</p>
-        </button>
-        <button onClick={() => handleSetOperatorType('*')} type={'button'}>
+        </Button>
+        <Button fontTerciary onClick={() => handleSetOperatorType('*')} type={'button'}>
           <p>*</p>
-        </button>
-        <button onClick={() => handleCalculatorDigits('4')} type={'button'}>
+        </Button>
+        <Button onClick={() => handleCalculatorDigits('4')} type={'button'}>
           <p>4</p>
-        </button>
-        <button onClick={() => handleCalculatorDigits('5')} type={'button'}>
+        </Button>
+        <Button onClick={() => handleCalculatorDigits('5')} type={'button'}>
           <p>5</p>
-        </button>
-        <button onClick={() => handleCalculatorDigits('6')} type={'button'}>
+        </Button>
+        <Button onClick={() => handleCalculatorDigits('6')} type={'button'}>
           <p>6</p>
-        </button>
-        <button onClick={() => handleSetOperatorType('+')} type={'button'}>
+        </Button>
+        <Button fontTerciary onClick={() => handleSetOperatorType('+')} type={'button'}>
           <p>+</p>
-        </button>
-        <button onClick={() => handleCalculatorDigits('7')} type={'button'}>
+        </Button>
+        <Button onClick={() => handleCalculatorDigits('7')} type={'button'}>
           <p>7</p>
-        </button>
-        <button onClick={() => handleCalculatorDigits('8')} type={'button'}>
+        </Button>
+        <Button onClick={() => handleCalculatorDigits('8')} type={'button'}>
           <p>8</p>
-        </button>
-        <button onClick={() => handleCalculatorDigits('9')} type={'button'}>
+        </Button>
+        <Button onClick={() => handleCalculatorDigits('9')} type={'button'}>
           <p>9</p>
-        </button>
-        <button onClick={() => handleSetOperatorType('-')} type={'button'}>
+        </Button>
+        <Button fontTerciary onClick={() => handleSetOperatorType('-')} type={'button'}>
           <p>-</p>
-        </button>
-        <button onClick={handleAddDot} type={'button'}>
+        </Button>
+        <Button onClick={handleAddDot} type={'button'}>
           <p>.</p>
-        </button>
-        <button onClick={() => handleCalculatorDigits('0')} type={'button'}>
+        </Button>
+        <Button onClick={() => handleCalculatorDigits('0')} type={'button'}>
           <p>0</p>
-        </button>
-        <button onClick={handleSetResult} type={'button'}>
+        </Button>
+        <Button onClick={handleSetResult} type={'button'}>
           <p>=</p>
-        </button>
-        <button onClick={() => handleSetOperatorType('/')} type={'button'}>
+        </Button>
+        <Button fontTerciary onClick={() => handleSetOperatorType('/')} type={'button'}>
           <p>/</p>
-        </button>
+        </Button>
       </CalculatorKeyboard>
     </Container>
   )
