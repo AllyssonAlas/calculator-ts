@@ -25,19 +25,42 @@ export const CalculatorScreen = styled.div`
   padding: 0 2rem 1rem;
   height: 30%;
 
-  h1 {
+  header {
     align-self: center;
     border: 2px solid ${({ theme }) => theme.border};
     border-bottom-right-radius: 2rem;
     border-bottom-left-radius: 2rem;
     border-top: none;
-    color: ${({ theme }) => theme.fontPrimary};
+    display: flex;
     font-size: 1.5rem;
     font-weight: normal;
     height: 3rem;
-    padding: 0 0.5rem;
-    text-align: center;
+    overflow: hidden;
     width: 40%;
+
+    button {
+      align-items: center;
+      background-color: ${({ theme }) => theme.fontText};
+      border: 1px solid ${({ theme }) => theme.border};
+      display: flex;
+      font-size: 1.7rem;
+      justify-content: center;
+      outline: none;
+      cursor: pointer;
+      width: 50%;
+
+      svg {
+        fill: ${({ theme }) => theme.background};
+      }
+    }
+
+    button:first-of-type {
+      background-color: ${({ theme }) => theme.background};
+
+      svg {
+        fill: ${({ theme }) => theme.fontText};
+      }
+    }
   }
 
   div {
@@ -48,18 +71,20 @@ export const CalculatorScreen = styled.div`
     height: 70%;
 
     small {
-      font-size: 1rem;
+      font-size: 1.7rem;
       font-weight: medium;
       text-align: right;
     }
 
     p {
       font-weight: bold;
-      font-size: 3.5rem;
+      font-size: 3rem;
       height: 3rem;
     }
   }
 `
+
+export const ThemePicker = styled.div``
 
 export const CalculatorKeyboard = styled.div`
   background-color: ${({ theme }) => theme.foreground};

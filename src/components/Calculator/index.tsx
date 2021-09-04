@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { FaBackspace } from 'react-icons/fa'
+import { FaSun, FaMoon, FaBackspace } from 'react-icons/fa'
 
 import { Container, CalculatorScreen, CalculatorKeyboard, Button } from './styles'
 
@@ -109,7 +109,14 @@ export function Calculator(): JSX.Element {
   return (
     <Container>
       <CalculatorScreen>
-        <h1>Calculadora</h1>
+        <header>
+          <button type={'button'}>
+            <FaSun />
+          </button>
+          <button type={'button'}>
+            <FaMoon />
+          </button>
+        </header>
         <div>
           <small>
             {calculatorResult} {operatorType}
