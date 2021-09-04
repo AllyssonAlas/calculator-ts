@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useState, useEffect } from 'react'
 import { ThemeProvider as Theme } from 'styled-components'
 
 import { atomOneLight } from '../themes/atomOneLight'
@@ -28,12 +28,26 @@ interface ThemeContextData {
 export const ThemeContext = createContext<ThemeContextData>({} as ThemeContextData)
 
 export function ThemeProvider({ children }: ThemeProviderProps): JSX.Element {
-  const [theme, setTheme] = useState(dracula)
+  const [theme, setTheme] = useState(atomOneLight)
 
   function toggleTheme(themeName: string) {
+    localStorage.setItem('@theme', themeName)
+
     if (themeName === 'light') setTheme(atomOneLight)
     if (themeName === 'dark') setTheme(dracula)
   }
+
+  useEffect(() => {
+    async function loadTheme() {
+      const currentTheme = await localStorage.getItem('@theme')
+
+      if (currentTheme) {
+        toggleTheme(currentTheme)
+      }
+    }
+
+    loadTheme()
+  }, [])
 
   return (
     <ThemeContext.Provider value={{ toggleTheme, theme }}>
