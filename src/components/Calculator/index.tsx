@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
 import { FaSun, FaMoon, FaBackspace } from 'react-icons/fa'
 
+import { useTheme } from '../../hooks/useTheme'
+
 import { Container, CalculatorScreen, CalculatorKeyboard, Button } from './styles'
 
 export function Calculator(): JSX.Element {
   const [calculatorDigits, setCalculatorDigits] = useState('')
   const [calculatorResult, setCalculatorResult] = useState('')
   const [operatorType, setOperatorType] = useState('')
+
+  const { toggleTheme } = useTheme()
 
   function handleClearCalculator() {
     setCalculatorDigits('')
@@ -110,10 +114,10 @@ export function Calculator(): JSX.Element {
     <Container>
       <CalculatorScreen>
         <header>
-          <button type={'button'}>
+          <button onClick={() => toggleTheme('light')} type={'button'}>
             <FaSun />
           </button>
-          <button type={'button'}>
+          <button onClick={() => toggleTheme('dark')} type={'button'}>
             <FaMoon />
           </button>
         </header>
