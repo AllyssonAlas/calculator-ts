@@ -29,5 +29,6 @@ module.exports = {
       { anonymous: 'never', named: 'never', asyncArrow: 'always' },
     ],
     'no-undef': 'off',
+    'react/prop-types': 'off',
   },
 }
